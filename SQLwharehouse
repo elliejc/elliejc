@@ -1,0 +1,49 @@
+
+20/07/2021 (Menu project)
+
+CREATE TABLE menu (
+  id INTEGER PRIMARY KEY,
+  dish_name TEXT UNIQUE, 
+  type TEXT , 
+  price INTEGER NOT NULL);
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (11,'Falafel (4 pieces)','Entree', 19 );
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (12, 'Lentil kale Soup', 'Entree', 17);
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (21, 'Fillet', 'Main course', 28 
+);
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (31, 'Apple crumble', 'Dessert', 12
+);
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (41, 'Orange juice', 'Soft drink', 10);
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (51, 'Bloody Merry', 'Cocktail', 21);
+INSERT INTO menu (id, dish_name, type, price)
+VALUES (52, 'Gin n Tonic', 'Cocktail', 18);
+ALTER TABLE menu
+ADD COLUMN 'Set or single order' TEXT DEFAULT 'Single Order';
+ALTER TABLE menu
+ADD COLUMN 'Comment/Suggest' TEXT;
+UPDATE menu
+SET 'SET or single order'= 'Set'
+WHERE id = 21;
+UPDATE menu
+SET 'Comment/Suggest' = 'Medium rare'
+WHERE id = 21;
+UPDATE menu
+SET 'Comment/Suggest' = 'served with hummus dip'
+WHERE id = 11;
+UPDATE menu
+SET 'Comment/Suggest' = 'Add £1 vanilla ice cream'
+WHERE id = 31;
+UPDATE menu
+SET 'Comment/Suggest' = 'Freshly squeezed'
+WHERE id = 41;
+UPDATE menu
+SET 'Comment/Suggest' = 'Vegan'
+WHERE id = 12;
+
+select *  
+FROM menu;
